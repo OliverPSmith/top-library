@@ -55,10 +55,15 @@ function displayLibrary() {
         bookItem.classList.add('book-item');
         library.appendChild(bookItem);
 
+        // Create wrapper to contain heading and read status, append to book
+        const headingWrapper = document.createElement('div');
+        headingWrapper.classList.add('button-wrapper');
+        bookItem.appendChild(headingWrapper);
+
         // Create book title, append to book
         const bookTitle = document.createElement('h1');
         bookTitle.textContent = myLibrary[i].title;
-        bookItem.appendChild(bookTitle);
+        headingWrapper.appendChild(bookTitle);
 
         // Create book author, append to book
         const bookAuthor = document.createElement('h2');
@@ -70,26 +75,32 @@ function displayLibrary() {
         bookPages.textContent = myLibrary[i].pages + ' pages';
         bookItem.appendChild(bookPages);
 
-        // Create 'read / unread' + check button, create the logic with checkreadstatus function, append to book.
-        const read = document.createElement("div");
+        // Create wrapper to contain check and delete buttons
+        const buttonWrapper = document.createElement('div');
+        buttonWrapper.classList.add('button-wrapper');
+
+        // Create 'read / unread' + check button, create the logic with checkreadstatus function, append to heading wrapper.
+        const read = document.createElement("p");
         const check=document.createElement("button");
-        check.textContent="check";
+        check.textContent="Have you read me?";
         
         if (myLibrary[i].read) {
             read.textContent = 'READ';
             read.classList.remove('book-not-read');
-            read.classList.add('book-read');
+         //   read.classList.add('book-read');
+            bookItem.classList.add('book-read')
         }   else {
             read.textContent = 'NOT READ';
             read.classList.remove('book-read');
-            read.classList.add('book-not-read');
+         //   read.classList.add('book-not-read');
+            bookItem.classList.add('book-not-read')
         }
         check.addEventListener('click', () => {
             checkReadStatus(myLibrary[i].title)
         });
 
-        bookItem.appendChild(read);
-        bookItem.appendChild(check);
+        headingWrapper.appendChild(read);
+        buttonWrapper.appendChild(check);
 
         // Create delete button, create logic, append to book
         const deletebtn = document.createElement('button');
@@ -102,8 +113,8 @@ function displayLibrary() {
             console.log(myLibrary);
         });
 
-        bookItem.appendChild(deletebtn);
-
+        buttonWrapper.appendChild(deletebtn);
+        bookItem.appendChild(buttonWrapper);
     }
 
 }

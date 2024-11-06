@@ -8,18 +8,21 @@
 </head>
 <body>
     
+    
+    <div class="form-wrapper">
+        <form>
+            <input type="text" id="input-title" name="title" placeholder="Book title" required>
+            <input type="text" id="input-author" name="author" placeholder="Author's name" required>
+            <input type="number" id="input-pages" name="pages" placeholder="How many pages?" required>
+            <label for="read">Have you read it?</label>
+            <input type="checkbox" id="input-read" name="read">
+            <button type="button" id="addBtn">Add New Book</button>
+        </form>
+    </div>
+
     <div class="library">
 
     </div>
-
-    <form>
-        <input type="text" id="input-title" name="title" placeholder="Book title" required>
-        <input type="text" id="input-author" name="author" placeholder="Author's name" required>
-        <input type="number" id="input-pages" name="pages" placeholder="How many pages?" required>
-        <label for="read">Have you read it?</label>
-        <input type="checkbox" id="input-read" name="read">
-        <button type="button" id="addBtn">Add New Book</button>
-    </form>
 
 <script type="text/javascript" src="app.js"></script>
 </body>
