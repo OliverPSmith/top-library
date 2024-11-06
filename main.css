@@ -24,6 +24,7 @@ form > input {
 }
 #addBtn {
     padding: 10px;
+    cursor: pointer;
 }
 
 .library {

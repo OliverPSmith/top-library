@@ -87,12 +87,10 @@ function displayLibrary() {
         if (myLibrary[i].read) {
             read.textContent = 'READ';
             read.classList.remove('book-not-read');
-         //   read.classList.add('book-read');
             bookItem.classList.add('book-read')
         }   else {
             read.textContent = 'NOT READ';
             read.classList.remove('book-read');
-         //   read.classList.add('book-not-read');
             bookItem.classList.add('book-not-read')
         }
         check.addEventListener('click', () => {
